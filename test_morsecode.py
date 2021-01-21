@@ -2,7 +2,6 @@
 
 import unittest
 import morsecode as mc
-
 from mock import patch
 from io import StringIO
 
@@ -96,6 +95,7 @@ class TestMorseCode(unittest.TestCase):
                 with patch('sys.stdout', new=StringIO()) as fakeOutput:
                     mc.main()
                     console = fakeOutput.getvalue().strip().split("\n")
+                    print(console[1])
                     self.assertIn(console[1].upper(), "GOOD BYE")
 
         input_list = ["woesds.l;", "_e_we", "12434cscs21", "545caacas", "--------", "0"]
