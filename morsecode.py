@@ -10,7 +10,6 @@ def get_morse_code_dict():
     }
     return morse_code
 
-
 # Help Function - 수정하지 말 것
 def get_help_message():
     message = "HELP - International Morse Code List\n"
@@ -25,7 +24,6 @@ def get_help_message():
             message += "\n"
 
     return message
-
 
 def is_help_command(user_input):
     """
@@ -182,13 +180,12 @@ def main():
     # ===Modify codes below=============
     while True:
         msg=input('Input your message(H - Help, 0 - Exit):')
-        msg=msg.upper()
-        print(msg)
         if msg=='0':
             break
         if is_help_command(msg):
             print(get_help_message())
         else:
+            msg=msg.upper()
             if is_validated_english_sentence(msg):
                 print(encoding_sentence(msg))
             elif is_validated_morse_code(msg):
